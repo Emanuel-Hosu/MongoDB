@@ -1,0 +1,42 @@
+use('library');
+
+db.inventory.insertMany({
+    book: 'The Lord of the rings',
+    author: 'J. R. R. Tolkien',
+    price: 20,
+    pages: 542,
+    launched: 1987,
+    pulisher: 'EmanuelSL'
+});
+
+use('library');
+
+db.inventory.insertOne({
+    book: 'The Lord of the rings 2',
+    author: 'J. R. R. Tolkien',
+    price: 20,
+    pages: 492,
+    launched: 1998,
+    pulisher: 'EmanuelSL'
+});
+
+use('library');
+
+db.inventory.insertMany([
+    {
+        book: 'The Lord of the rings 3',
+        author: 'J. R. R. Tolkien',
+        price: 20,
+        pages: 502,
+        launched: 1987,
+        pulisher: 'HosusPUH'
+    },
+    {
+        book: 'The Lord of the rings 4',
+        author: 'J. R. R. Tolkien',
+        price: 20,
+        pages: 642,
+        launched: 1998,
+        pulisher: 'HosusPUH'
+    }
+]);

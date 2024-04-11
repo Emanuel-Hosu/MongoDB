@@ -1,0 +1,3 @@
+use('library')
+
+db.inventory.find({pages: 502})
