@@ -1,0 +1,20 @@
+db.personas.drop;
+
+use("personas");
+
+db.estudiantes.insertOne({
+    _id: "01",
+    nombre: "Alvarito",
+    apellidos: "Torres",
+    direccion: "Calle Jesus nr.9",
+    fechaNacimiento:"03/09/2003"
+})
+
+use("personas");
+db.estudiantes.find()
+
+db.estudiantes.drop()
+db.dropDatabase()
+
+use("personas");
+db.getMongo().getDBs()

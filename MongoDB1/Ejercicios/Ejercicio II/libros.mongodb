@@ -1,0 +1,57 @@
+db.libros_v2.drop()
+use('libros_v2')
+
+db.libros_v2.insertOne(
+  {
+    _id: 1,  
+    titulo: 'El aleph',
+    autor: 'Borges',
+    editorial: ['Siglo XXI','Planeta'],
+    precio: 20,
+    cantidad: 50 
+  }
+)
+db.libros_v2.insertOne(
+  {
+    _id: 2,  
+    titulo: 'Martin Fierro',
+    autor: 'Jose Hernandez',
+    editorial: ['Siglo XXI'],
+    precio: 50,
+    cantidad: 12
+  }
+)
+db.libros_v2.insertOne(
+  {
+    _id: 3,  
+    titulo: 'Aprenda PHP',
+    autor: 'Mario Molina',
+    editorial: ['Siglo XXI','Planeta'],
+    precio: 50,
+    cantidad: 20
+  }
+)
+db.libros_v2.insertOne(
+  {
+    _id: 4,  
+    titulo: 'Java en 10 minutos',
+    editorial: ['Siglo XXI'],
+    precio: 45,
+    cantidad: 1 
+  }
+)
+
+use("libros_v2")
+db.libros_v2.find({precio: {$gt: 40}})
+
+use("libros_v2")
+db.libros_v2.find({cantidad: {$gte: 50}})
+
+use('libros_v2')
+db.libros_v2.find({cantidad: {$ne: 50}})
+
+use('libros_v2')
+db.libros_v2.find({precio: {$gt: 19, $lt: 46}})
+
+use('libros_v2')
+db.libros_v2.find({editorial: {$in: ['Planeta']}})
