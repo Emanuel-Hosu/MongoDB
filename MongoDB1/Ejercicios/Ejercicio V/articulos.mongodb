@@ -61,16 +61,13 @@ use('articulos')
 db.articulos.find({})
 
 use('articulos')
-db.articulos.find({rubro: {$ne: 'impresora'}})
+db.articulos.updateOne({nombre: 'LOGITECH M90'}, {$set: {precio: 59}})
 
 use('articulos')
-db.articulos.find({rubro: {$eq: 'mouse'}})
+db.articulos.updateOne({_id: {$eq: 6}}, {$set: {stockTwo: 3}})
 
 use('articulos')
-db.articulos.find({precio: {$gte: 5000}})
+db.articulos.updateOne({_id: 6}, {$set: {proveedores: ['Martinez', 'Gurierrez']}})
 
 use('articulos')
-db.articulos.find({precio: {$gte: 3500}})
-
-use('articulos')
-db.articulos.find({stock: {$gte: 0, $lte: 4}})
+db.articulos.updateOne({_id: 6}, {$unset: {proveedores: ""}})

@@ -42,6 +42,9 @@ db.libros_v2.insertOne(
 )
 
 use("libros_v2")
+db.libros_v2.find({}).pretty()
+
+use("libros_v2")
 db.libros_v2.find({precio: {$gt: 40}})
 
 use("libros_v2")
@@ -55,3 +58,12 @@ db.libros_v2.find({precio: {$gt: 19, $lt: 46}})
 
 use('libros_v2')
 db.libros_v2.find({editorial: {$in: ['Planeta']}})
+
+use('libros_v2')
+db.libros_v2.updateOne({_id: {$eq: 1}}, {$unset: {precio: ""}})
+
+use('libros_v2')
+db.libros_v2.updateOne({_id: {$eq: 2}}, {$push: {editorial: 44}})
+
+use('libros_v2')
+db.libros_v2.updateOne({_id: {$eq: 2}}, {$pull: {editorial: 44}})

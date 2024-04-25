@@ -1,0 +1,52 @@
+db.users.drop();
+use('users')
+
+db.users.insertMany([
+    {
+        name: "Alice",
+        favoriteGames: ["Minecraft", "Fortnite"]
+    },
+    {
+        name: "Bob",
+        favoriteGames: ["League of Legends", "Overwatch"]
+    },
+    {
+        name: "Charlie",
+        favoriteGames: ["Counter-Strike", "Valorant"]
+    }
+]);
+
+use('users')
+db.users.updateOne({name: 'Alice'}, {$push: {favoriteGames: 'Among Us'}})
+
+use('users')
+db.users.updateOne({name: 'Alice'}, {$pull: {favoriteGames: 'Fortnite'}})
+
+use('users')
+db.users.updateOne(
+    { name: "Bob", favoriteGames: "League of Legends" },
+    {
+        $pull: { favoriteGames: "League of Legends" },
+        $push: { favoriteGames: "Dota 2" }
+    }
+);
+  
+use('users')
+db.users.updateOne(
+    {name: 'Charlie'},
+    {$push: {favoriteGames: {$each: ['Apex Legends', 'Rocket League']}}}
+)
+
+use('users')
+db.users.updateMany(
+    { favoriteGames: "Minecraft" },
+    { $pull: { favoriteGames: "Minecraft" } }
+  );
+
+  
+use('users')
+db.users.updateOne(
+    { name: "Charlie" },
+    { $pull: { favoriteGames: { $in: ["Counter-Strike", "Valorant"] } } }
+  );
+  

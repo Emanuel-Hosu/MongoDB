@@ -58,19 +58,10 @@ db.articulos.insertOne(
 )
 
 use('articulos')
-db.articulos.find({})
+db.articulos.find({}, {_id: 1, nombre: 1})
 
 use('articulos')
-db.articulos.find({rubro: {$ne: 'impresora'}})
+db.articulos.find({rubro: 'impresora'}, {nombre: 1, precio: 1})
 
 use('articulos')
-db.articulos.find({rubro: {$eq: 'mouse'}})
-
-use('articulos')
-db.articulos.find({precio: {$gte: 5000}})
-
-use('articulos')
-db.articulos.find({precio: {$gte: 3500}})
-
-use('articulos')
-db.articulos.find({stock: {$gte: 0, $lte: 4}})
+db.articulos.find({precio: {$gte: 3500}}, {_id: 1, nombre: 1, stock: 1})
