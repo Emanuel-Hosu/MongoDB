@@ -1,0 +1,67 @@
+use('libros_v2')
+db.libros_v2.drop()
+
+db.libros_v2.insertOne(
+  {
+    _id: 1,  
+    titulo: 'El aleph',
+    autor: {
+      nombre: 'Borges',
+      nacionalidad: 'Argentina'
+    },
+    editorial: ['Siglo XXI','Planeta'],
+    precio: 20,
+    cantidad: 50 
+  }
+)
+db.libros_v2.insertOne(
+  {
+    _id: 2,  
+    titulo: 'Martin Fierro',
+    autor: {
+      nombre: 'Jose Hernandez',
+      nacionalidad: 'Argentina'
+    },
+    editorial: ['Siglo XXI'],
+    precio: 50,
+    cantidad: 12
+  }
+)
+db.libros_v2.insertOne(
+  {
+    _id: 3,  
+    titulo: 'Aprenda PHP',
+    autor: {
+      nombre: 'Mario Molina',
+      nacionalidad: 'Española'
+    },
+    editorial: ['Siglo XXI','Planeta'],
+    precio: 50,
+    cantidad: 20
+  }
+)
+db.libros_v2.insertOne(
+  {
+    _id: 4,  
+    autor: {
+      nombre: 'Java en 10 minutos',
+      nacionalidad: 'Española'
+    },
+    editorial: ['Siglo XXI'],
+    precio: 45,
+    cantidad: 1 
+  }
+)
+use('libros_v2')
+db.libros_v2.find({})
+
+use('libros_v2')
+    db.libros_v2.find({"autor.nacionalidad": "Argentina"})
+
+use('libros_v2')
+    db.libros_v2.find({"autor.nombre": "Borges"})
+
+use('libros_v2')
+db.libros_v2.find({"autor.nacionalidad": "Española", "precio": {$gte: 50} })
+
+
