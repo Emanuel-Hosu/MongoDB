@@ -1,0 +1,148 @@
+use('dispositivos');
+
+db.dispositivos.insertOne({
+    nombre: 'Amazon Tabet',
+    fabricante: 'Amazon',
+    categoria: 'Tablet',
+    precio: 499
+})
+
+db.dispositivos.insertOne({
+    nombre: 'iPad 8',
+    fabricante: 'Apple',
+    categoria: 'Tablet',
+    precio: 599
+})
+
+db.dispositivos.insertOne({
+    nombre: 'iPad 9',
+    fabricante: 'Apple',
+    categoria: 'Tablet',
+    precio: 899
+})
+
+db.dispositivos.insertOne({
+    nombre: 'OnePlus Tablet',
+    fabricante: 'Google',
+    categoria: 'Tablet',
+    precio: 520
+})
+
+db.dispositivos.insertOne({
+    nombre: 'OnePlus S5',
+    fabricante: 'Google',
+    categoria: 'Smartphone',
+    precio: 720
+})
+
+db.dispositivos.insertOne({
+    nombre: 'OnePlus S6',
+    fabricante: 'Google',
+    categoria: 'Smartphone',
+    precio: 790
+})
+
+db.dispositivos.insertOne({
+    nombre: 'iPhone SE 3',
+    fabricante: 'Apple',
+    categoria: 'Smartphone',
+    precio: 890
+})
+
+db.dispositivos.insertOne({
+    nombre: 'iPhone 14 Pro',
+    fabricante: 'Apple',
+    categoria: 'Smartphone',
+    precio: 990
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Amazon Phone',
+    fabricante: 'Amazon',
+    categoria: 'Smartphone',
+    precio: 690
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Amazon Phone Pro',
+    fabricante: 'Amazon',
+    categoria: 'Smartphone',
+    precio: 990
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Amazon Laptop',
+    fabricante: 'Amazon',
+    categoria: 'Portatil',
+    precio: 1690
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Macbook 8',
+    fabricante: 'Apple',
+    categoria: 'Portatil',
+    precio: 1990
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Macbook Air 8',
+    fabricante: 'Apple',
+    categoria: 'Portatil',
+    precio: 2290
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Macbook Air 9',
+    fabricante: 'Apple',
+    categoria: 'Portatil',
+    precio: 2520
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Google Portatil',
+    fabricante: 'Google',
+    categoria: 'Portatil',
+    precio: 1220
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Google altavoz',
+    fabricante: 'Google',
+    categoria: 'Accesorio',
+    precio: 50
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Apple Airpods S1',
+    fabricante: 'Apple',
+    categoria: 'Accesorio',
+    precio: 130
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Apple Airpods S2',
+    fabricante: 'Apple',
+    categoria: 'Accesorio',
+    precio: 160
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Amazon auriculares',
+    fabricante: 'Amazon',
+    categoria: 'Accesorio',
+    precio: 100
+})
+
+db.dispositivos.insertOne({
+    nombre: 'Amazon auriculares bluetooth',
+    fabricante: 'Amazon',
+    categoria: 'Accesorio',
+    precio: 130
+})
+
+use('dispositivos');
+    db.dispositivos.aggregate([{$group:{
+        _id: "$fabricante",
+        total: {$sum: 1}
+    }
+}])

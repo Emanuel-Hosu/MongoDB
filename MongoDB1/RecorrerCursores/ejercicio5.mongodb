@@ -1,0 +1,36 @@
+use('students2');
+db.studentsCollection2.drop();
+
+db.studentsCollection2.insertOne({
+  "_id": 1,
+  "name": "John",
+  "scores": [80, 85, 90]
+})
+
+db.studentsCollection2.insertOne({
+  "_id": 3,
+  "name": "Mike",
+  "scores": [90, 95, 100]
+})
+
+db.studentsCollection2.insertOne({
+  "_id": 2,
+  "name": "Jane",
+  "scores": [70, 75, 80]
+})
+
+use('students2');
+db.studentsCollection2.aggregate([
+    {
+        $unwind: '$scores'
+    },
+    {
+        $group: {
+            '_id': '$name',
+            
+            'avarageScore': {$avg: '$scores'}
+        }
+    },
+]).sort({'avarageScore': 1})
+
+

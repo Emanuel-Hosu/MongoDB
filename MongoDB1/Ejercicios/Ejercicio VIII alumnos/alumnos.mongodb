@@ -1,0 +1,36 @@
+db.alumnos.drop()
+use('alumnos')
+
+db.alumnos.insertOne(
+  {
+    _id: 20456123,
+    apellido: 'Gonzalez',
+    nombre: 'Ana',
+    domicilio: 'Colon 123',
+    fechanacimiento: new Date(1990,7,15) 
+  }
+)
+db.alumnos.insertOne(
+  {
+    _id: 45123845,
+    apellido: 'Juarez',
+    nombre: 'Bernardo',
+    domicilio: 'Sucre 456',
+    fechanacimiento: new Date(1964,0,1) 
+  }
+)
+db.alumnos.insertOne(
+  {
+    _id: 16567512,
+    apellido: 'Perez',
+    nombre: 'Laura',
+    domicilio: '21 de Septiembre 3233',
+    fechanacimiento: new Date(1972,3,2) 
+  }
+)
+
+use('alumnos')
+db.alumnos.find({}, {apellido: 1, fechanacimiento: 1}).sort({fechanacimiento: -1})
+
+use('alumnos')
+db.alumnos.find({fechanacimiento: {$gte: new Date(1970)}}, {apellido: 1, fechanacimiento: 1}).sort({fechanacimiento: -1})

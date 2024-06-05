@@ -99,4 +99,4 @@ db.series.find({'titulo': 'The big bang theory'}, {'temporada1': 1, '_id': 0})
 
 //Imprimir solo el primer capítulo de la primer temporada de 'The Walking Dead'
 use('series')
-db.series.find({'titulo': 'The big bang theory'}, {'temporada1.capitulo1': 1, '_id': 0})
+db.series.find({'titulo': 'The Walking Dead'}, {'temporada1.capitulo1': 1, '_id': 0})

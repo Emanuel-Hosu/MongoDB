@@ -1,0 +1,40 @@
+use('students');
+
+db.studentsCollection.insertOne({
+  "_id": 1,
+  "name": "John",
+  "scores": [80, 85, 90]
+})
+
+db.studentsCollection.insertOne({
+  "_id": 3,
+  "name": "Mike",
+  "scores": [90, 95, 100]
+})
+
+db.studentsCollection.insertOne({
+  "_id": 2,
+  "name": "Jane",
+  "scores": [70, 75, 80]
+})
+
+use('students')
+db.studentsCollection.aggregate([
+    //PRIMER FILTRO
+    {
+        $unwind: "$scores"  //Sirve como para splitear el array y nos ayuda a que los datos del array sean accesibles
+    },
+    //SEGUNDO FILTRO
+    {
+        $group:{
+            _id: "$name", //Aqui usa el id como para enseñar el nombre de cada uno acompañado de scoresAvarage
+            scoresAvarage: {$avg: "$scores"}
+        }
+    },
+    {
+        $sort:{
+            scoresAvarage: -1
+        }
+    }
+
+])

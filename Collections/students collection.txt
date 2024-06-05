@@ -1,0 +1,19 @@
+use('students');
+
+db.studentsCollection.insertOne({
+  "_id": 1,
+  "name": "John",
+  "scores": [80, 85, 90]
+})
+
+db.studentsCollection.insertOne({
+  "_id": 3,
+  "name": "Mike",
+  "scores": [90, 95, 100]
+})
+
+db.studentsCollection.insertOne({
+  "_id": 2,
+  "name": "Jane",
+  "scores": [70, 75, 80]
+})

@@ -1,0 +1,31 @@
+use('products');
+
+db.productsCollection.insertOne({
+  "_id": 1,
+  "customer": "John",
+  "order_date": ISODate("2022-01-01"),
+  "total_amount": 100
+})
+
+db.productsCollection.insertOne({
+  "_id": 2,
+  "customer": "Jane",
+  "order_date": ISODate("2022-02-01"),
+  "total_amount": 200
+})
+
+db.productsCollection.insertOne({
+  "_id": 3,
+  "customer": "John",
+  "order_date": ISODate("2022-02-15"),
+  "total_amount": 150
+})
+
+db.productsCollection.insertOne({
+  "_id": 4,
+  "customer": "Mike",
+  "order_date": ISODate("2022-03-01"),
+  "total_amount": 300
+})
+
+

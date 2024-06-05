@@ -58,7 +58,7 @@ db.articulos.insertOne(
 )
 
 use('articulos')
-db.articulos.find({}, {_id: 1, nombre: 1})
+db.articulos.find({}, {'_id': 1, 'nombre': 1})
 
 use('articulos')
 db.articulos.find({rubro: 'impresora'}, {nombre: 1, precio: 1})

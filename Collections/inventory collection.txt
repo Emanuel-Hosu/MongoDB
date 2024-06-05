@@ -1,0 +1,31 @@
+use('inventory');
+
+db.inventoryCollection.insertOne({
+    "_id": 1,
+    "item": "Product A",
+    "sizes": [ "S", "M"],
+    "stock": [
+      { "size": "S", "quantity": 10 },
+      { "size": "M", "quantity": 5 }
+    ]
+})
+
+db.inventoryCollection.insertOne({
+  "_id": 2,
+  "item": "Product B",
+  "sizes": [ "M", "L" ],
+  "stock": [
+    { "size": "M", "quantity": 3 },
+    { "size": "L", "quantity": 7 }
+  ]
+})
+
+db.inventoryCollection.insertOne({
+  "_id": 3,
+  "item": "Product C",
+  "sizes": [ "S", "XL" ],
+  "stock": [
+    { "size": "S", "quantity": 4 },
+    { "size": "XL", "quantity": 9 }
+  ]
+})

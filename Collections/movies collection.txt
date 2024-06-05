@@ -1,0 +1,42 @@
+use('movies');
+
+db.moviesCollection.insertOne({
+  "_id": 1,
+  "title": "Movie A",
+  "genre": "Action",
+  "actors": ["Actor A", "Actor B", "Actor C"],
+  "rating": 7.8
+})
+
+db.moviesCollection.insertOne({
+  "_id": 2,
+  "title": "Movie B",
+  "genre": "Drama",
+  "actors": ["Actor B", "Actor D"],
+  "rating": 8.2
+})
+
+db.moviesCollection.insertOne({
+  "_id": 3,
+  "title": "Movie C",
+  "genre": "Comedy",
+  "actors": ["Actor A", "Actor C"],
+  "rating": 6.5
+})
+
+db.moviesCollection.insertOne({
+  "_id": 4,
+  "title": "Movie D",
+  "genre": "Thriller",
+  "actors": ["Actor C", "Actor D"],
+  "rating": 8.0
+})
+
+db.moviesCollection.insertOne({
+  "_id": 5,
+  "title": "Movie E",
+  "genre": "Thriller",
+  "actors": ["Actor E", "Actor H"],
+  "rating": 9.0
+})
+

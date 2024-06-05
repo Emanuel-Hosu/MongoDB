@@ -64,7 +64,7 @@ use('articulos')
 db.articulos.updateOne({nombre: 'LOGITECH M90'}, {$set: {precio: 59}})
 
 use('articulos')
-db.articulos.updateOne({_id: {$eq: 6}}, {$set: {stockTwo: 3}})
+db.articulos.updateOne({_id: {$eq: 6}}, {$set: {'stockTwo': 3}})
 
 use('articulos')
 db.articulos.updateOne({_id: 6}, {$set: {proveedores: ['Martinez', 'Gurierrez']}})

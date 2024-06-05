@@ -1,0 +1,25 @@
+use('items');
+
+db.itemsCollection.insertOne({
+  "_id": 1,
+  "customer": "Alice",
+  "items": ["Product A", "Product B", "Product C"],
+  "total": 100
+})
+
+db.itemsCollection.insertOne({
+  "_id": 2,
+  "customer": "Bob",
+  "items": ["Product C", "Product D"],
+  "total": 80
+})
+
+db.itemsCollection.insertOne({
+  "_id": 3,
+  "customer": "Charlie",
+  "items": ["Product A", "Product D", "Product E"],
+  "total": 120
+})
+
+use('items');
+db.itemsCollection.find({}, {total: 1, _id: 0}).sort({total: -1}).limit(1)

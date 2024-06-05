@@ -1,0 +1,41 @@
+use('workers');
+
+db.workersCollection.insertOne({
+  "_id": 1,
+  "name": "John",
+  "department": "IT",
+  "salary": 5000,
+  "hired_date": 2022
+})
+
+db.workersCollection.insertOne({
+  "_id": 2,
+  "name": "Jane",
+  "department": "HR",
+  "salary": 6000,
+  "hired_date": 2021
+})
+
+db.workersCollection.insertOne({
+  "_id": 3,
+  "name": "Mike",
+  "department": "IT",
+  "salary": 5500,
+  "hired_date": 2022
+})
+
+db.workersCollection.insertOne({
+  "_id": 4,
+  "name": "David",
+  "department": "IT",
+  "salary": 5800,
+  "hired_date": 2023
+})
+
+db.workersCollection.insertOne({
+  "_id": 5,
+  "name": "David",
+  "department": "IT",
+  "salary": 6200,
+  "hired_date": 2023
+})

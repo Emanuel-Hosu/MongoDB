@@ -1,0 +1,48 @@
+use('orders');
+
+db.ordersCollection.insertOne({
+    "_id": 1,
+    "customer": "John",
+    "products": [
+      {
+        "name": "Product A",
+        "price": 10,
+        "quantity": 2
+      },
+      {
+        "name": "Product B",
+        "price": 15,
+        "quantity": 1
+      }
+    ]
+})
+
+db.ordersCollection.insertOne({
+    "_id": 2,
+    "customer": "Alice",
+    "products": [
+      {
+        "name": "Product A",
+        "price": 10,
+        "quantity": 3
+      },
+      {
+        "name": "Product C",
+        "price": 20,
+        "quantity": 2
+      }
+    ]
+})
+
+db.ordersCollection.insertOne({
+    "_id": 3,
+    "customer": "Bob",
+    "products": [
+      {
+        "name": "Product B",
+        "price": 15,
+        "quantity": 2
+      }
+    ]
+})
+  
